@@ -14,7 +14,7 @@ DATASET:
   DATA_FORMAT: zip
   FLIP: 0.5
   INPUT_SIZE: 512
-  OUTPUT_SIZE: [128, ]
+  OUTPUT_SIZE: [128,]
   MAX_NUM_PEOPLE: 30
   MAX_ROTATION: 30
   MAX_SCALE: 1.5
@@ -29,10 +29,10 @@ DATASET:
   OFFSET_REG: True
   USE_BBOX_CENTER: False
   OFFSET_RADIUS: 4
-  CENTER_SIGMA: 3
-  WITH_CENTER: True
-  SIGMA: [[2.0, 2.0, 2.0]]
-  BG_WEIGHT: [[0.1, 0.1, 0.1]]
+  CENTER_SIGMA: 4
+  WITH_CENTER: True  
+  SIGMA: [[2.0, 2.0, 2.0], [2.0]]
+  BG_WEIGHT: [[0.1, 0.1, 0.1], [0.025]]
   SCALE_AWARE_SIGMA: True
   INTER_SIGMA: True
   BASE_INTERSIZE: 256
@@ -44,10 +44,9 @@ DATASET:
   BASE_INTRASIGMA: 1.0
   INTRA_CUT: True
   USE_JNT: True
-  PAUTA: 3
   JNT_THR: 0.01
   USE_INT: True
-  SHAPE: True
+  SHAPE: False
   SHAPE_WEIGHT: 1.77
 DEBUG:
   DEBUG: False
@@ -146,7 +145,7 @@ MODEL:
       DILATION_RATE:
       - 1
   INIT_WEIGHTS: True
-  NAME: pose_hrnet
+  NAME: pose_higher_hrnet
   NUM_JOINTS: 17
   PRETRAINED: 'model/imagenet/hrnet_w32-36af842e.pth'
   RESOLUTION64: False
