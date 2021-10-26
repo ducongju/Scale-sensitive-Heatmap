@@ -316,14 +316,11 @@ def main():
     cv2.imwrite(img_file2, heatmap_add)
 
     # groundtruth
-    
-
     dataset_dir = "./data/coco"
     coco = COCO(os.path.join(dataset_dir,'annotations','person_keypoints_val2017.json'))
     catIds = coco.getCatIds(catNms=['person'])
     imgIds = int(args.imageFile.split('.')[-2].split('/')[-1])
     img = coco.loadImgs(imgIds)[0]
-    image_path = args.imageFile
     annIds = coco.getAnnIds(imgIds=img['id'], catIds=catIds, iscrowd=None)
     anns = coco.loadAnns(annIds)
     
