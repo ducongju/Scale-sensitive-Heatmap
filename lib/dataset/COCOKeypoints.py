@@ -177,30 +177,41 @@ class CocoKeypoints(CocoDataset):
             if self.scale_aware_sigma:
 
                 # 人体外部尺度
-                intersigma = np.ones(num_people)
+                intersigma = np.ones(num_people) * self.base_intersigma
                 if self.inter_sigma:
-                    intersize = np.ones(num_people)
-                    # 基于距离
-                    if self.distance_based and joints[i, 1, 0] != 0 and joints[i, 1, 1] != 0 and joints[i, 2, 0] != 0 and joints[i, 2, 1] != 0 and joints[i, 15, 0] != 0 and joints[i, 15, 1] != 0 and joints[i, 16, 0] != 0 and joints[i, 16, 1] != 0:
+                    intersize = np.ones(num_people) * self.base_intersize
+                    # 基于脚踝距离
+#                     if self.distance_based and joints[i, 1, 0] != 0 and joints[i, 1, 1] != 0 and joints[i, 2, 0] != 0 and joints[i, 2, 1] != 0 and joints[i, 15, 0] != 0 and joints[i, 15, 1] != 0 and joints[i, 16, 0] != 0 and joints[i, 16, 1] != 0:
+#                         centerx_eye = (joints[i, 1, 0] + joints[i, 2, 0]) / 2
+#                         centery_eye = (joints[i, 1, 1] + joints[i, 2, 1]) / 2
+#                         p1x = joints[i, 2, 0] - joints[i, 1, 0]
+#                         p1y = joints[i, 2, 1] - joints[i, 1, 1]
+#                         p2x = p1y
+#                         p2y = -p1x
+#                         p3x = joints[i, 15, 0] - centerx_eye
+#                         p3y = joints[i, 15, 1] - centery_eye
+#                         p4x = joints[i, 16, 0] - centerx_eye
+#                         p4y = joints[i, 16, 1] - centery_eye
+#                         import math
+#                         d1 = (p3x * p2x + p3y * p2y) / math.sqrt(p2x ** 2 + p2y ** 2)
+#                         d2 = (p4x * p2x + p4y * p2y) / math.sqrt(p2x ** 2 + p2y ** 2)                       
+#                         intersize[i] = abs(max(d1, d2))
+                    # 基于臀部距离
+                    if self.distance_based and joints[i, 1, 0] != 0 and joints[i, 1, 1] != 0 and joints[i, 2, 0] != 0 and joints[i, 2, 1] != 0 and joints[i, 11, 0] != 0 and joints[i, 11, 1] != 0 and joints[i, 12, 0] != 0 and joints[i, 12, 1] != 0:
                         centerx_eye = (joints[i, 1, 0] + joints[i, 2, 0]) / 2
                         centery_eye = (joints[i, 1, 1] + joints[i, 2, 1]) / 2
                         p1x = joints[i, 2, 0] - joints[i, 1, 0]
                         p1y = joints[i, 2, 1] - joints[i, 1, 1]
                         p2x = p1y
                         p2y = -p1x
-                        p3x = joints[i, 15, 0] - centerx_eye
-                        p3y = joints[i, 15, 1] - centery_eye
-                        p4x = joints[i, 16, 0] - centerx_eye
-                        p4y = joints[i, 16, 1] - centery_eye
+                        p3x = joints[i, 11, 0] - centerx_eye
+                        p3y = joints[i, 11, 1] - centery_eye
+                        p4x = joints[i, 12, 0] - centerx_eye
+                        p4y = joints[i, 12, 1] - centery_eye
                         import math
                         d1 = (p3x * p2x + p3y * p2y) / math.sqrt(p2x ** 2 + p2y ** 2)
                         d2 = (p4x * p2x + p4y * p2y) / math.sqrt(p2x ** 2 + p2y ** 2)                       
-                        intersize[i] = max(d1, d2)
-                    # 基于面积
-                    else:
-                        # intersize[i] = area[i, 0]
-                        # intersize[i] = obj['bbox'][2]*obj['bbox'][3]
-                        intersize[i] = obj['bbox'][2]
+                        intersize[i] = abs(max(d1, d2))
                     # 截断设置
                     if self.base_intersize > intersize[i]:
                         intersize[i] = self.base_intersize
@@ -213,7 +224,7 @@ class CocoKeypoints(CocoDataset):
                         intersigma = (np.exp(x) - np.exp(-x)) / (np.exp(x) + np.exp(-x)) * self.base_intersigma
 
                 # 人体内部尺度
-                intrasigma = np.ones(17)
+                intrasigma = np.ones(17) * self.base_intrasigma
                 if self.intra_sigma:
                     intrasize = np.array([.026, .025, .025, .035, .035, .079, .079, .072, .072,
                              .062, .062, .107, .107, .087, .087, .089, .089])
