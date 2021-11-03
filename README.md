@@ -8,17 +8,17 @@ Multi-person pose estimation is a challenging vision task that can be seriously 
 | Backbone | Input size | AP | Ap .5 | AP .75 | AP (M) | AP (L) | AR | AR .5 | AR .75 | AR (M) | AR (L) |
 |--------------------|--------------|-------|-------|--------|--------|--------|-------|-------|--------|--------|--------|
 | **pose_hrnet_w32_single** | 512x512 | 68.3 | 87.2 | 74.4 | 62.9 | 76.5 | 73.1 | 90.6 | 78.2 | 66.7 | 82.2 |
-| **pose_higher_hrnet_w32_single** | 512x512 | 69.4 | 87.7 | 75.5 | 63.8 | 77.6 | 73.9 | 91.1 | 79.3 | 67.6 | 83.1 |
+| **pose_higher_hrnet_w32_single** | 512x512 | 69.3 | 87.3 | 75.5 | 64.0 | 77.2 | 74.3 | 91.2 | 79.9 | 68.0 | 83.4 |
 | **pose_hrnet_w32_multi** | 512x512 | 70.6 | 88.0 | 76.8 | 66.1 | 77.6 | 75.9 | 92.2 | 81.4 | 70.2 | 84.1 |
-| **pose_higher_hrnet_w32_multi** | 512x512 | 71.3 | 88.1 | 77.5 | 66.7 | 78.4 | 76.1 | 92.0 | 81.4 | 70.5 | 84.0 |
+| **pose_higher_hrnet_w32_multi** | 512x512 | 71.2 | 87.7 | 77.4 | 66.9 | 77.9 | 76.5 | 92.2 | 81.9 | 71.1 | 84.3 |
 
 ### Results on COCO test-dev2017
 | Backbone | Input size | AP | Ap .5 | AP .75 | AP (M) | AP (L) | AR | AR .5 | AR .75 | AR (M) | AR (L) |
 |--------------------|--------------|-------|-------|--------|--------|--------|-------|-------|--------|--------|--------|
 | **pose_hrnet_w32_single** | 512x512 | 67.5 | 88.2 | 73.7 | 62.1 | 75.2 | 72.4 | 91.5 | 78.0 | 65.9 | 81.4 |
-| **pose_higher_hrnet_w32_single** | 512x512 | 68.4 | 88.4 | 74.8 | 63.0 | 75.9 | 73.1 | 91.7 | 78.8 | 66.7 | 81.8 |
+| **pose_higher_hrnet_w32_single** | 512x512 | 68.4 | 88.7 | 74.5 | 62.2 | 75.5 | 73.0 | 92.1 | 79.0 | 66.1 | 82.2 |
 | **pose_hrnet_w32_multi** | 512x512 | 69.6 | 89.0 | 76.2 | 65.1 | 76.0 | 75.0 | 93.1 | 80.9 | 69.3 | 82.9 |
-| **pose_higher_hrnet_w32_multi** | 512x512 | 70.0 | 89.1 | 76.7 | 65.6 | 76.7 | 75.1 | 92.6 | 80.9 | 69.5 | 82.7 |
+| **pose_higher_hrnet_w32_multi** | 512x512 | 70.0 | 89.2 | 77.1 | 65.6 | 76.4 | 75.2 | 93.0 | 81.3 | 69.4 | 83.0 |
 
 ### Results on CrowdPose test
 | Backbone             |    AP | Ap .5 | AP .75 | AP (E) | AP (M) | AP (H) |
@@ -175,9 +175,5 @@ Thanks for the open-source HigherHRNet
 [MMPose](https://github.com/open-mmlab/mmpose), it is a part of the OpenMMLab project.
 
 ## Some Results
-![result1-ours](https://github.com/ducongju/Scale-sensitive-Heatmap/blob/master/results/results1-ours.jpg)
-![result2-ours](https://github.com/ducongju/Scale-sensitive-Heatmap/blob/master/results/results2-ours.jpg)
-![result3-ours](https://github.com/ducongju/Scale-sensitive-Heatmap/blob/master/results/results3-ours.jpg)
-![result4-ours](https://github.com/ducongju/Scale-sensitive-Heatmap/blob/master/results/results4-ours.jpg)
-![result5-ours](https://github.com/ducongju/Scale-sensitive-Heatmap/blob/master/results/results5-ours.jpg)
+![result](https://github.com/ducongju/Scale-sensitive-Heatmap/blob/master/results/Figure-6.pdf)
 
