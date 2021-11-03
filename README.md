@@ -175,5 +175,5 @@ Thanks for the open-source HigherHRNet
 [MMPose](https://github.com/open-mmlab/mmpose), it is a part of the OpenMMLab project.
 
 ## Some Results
-![result](https://github.com/ducongju/Scale-sensitive-Heatmap/blob/master/results/Figure-6.pdf)
+![result](https://github.com/ducongju/Scale-sensitive-Heatmap/blob/master/results/Figure-6.jpg)
 
