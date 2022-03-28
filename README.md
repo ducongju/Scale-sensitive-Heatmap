@@ -174,6 +174,17 @@ Thanks for the open-source HigherHRNet
 ### Other implementations
 [MMPose](https://github.com/open-mmlab/mmpose), it is a part of the OpenMMLab project.
 
-## Some Results
+### Some Results
 ![result](https://github.com/ducongju/Scale-sensitive-Heatmap/blob/master/results/Figure-6.jpg)
 
+### Citation
+If you use our code or models in your research, please cite with:
+```
+@article{du2022scale,
+  title={A scale-sensitive heatmap representation for multi-person pose estimation},
+  author={Du, Congju and Yu, Han and Yu, Li},
+  journal={IET Image Processing},
+  year={2022},
+  publisher={Wiley Online Library}
+}
+```
